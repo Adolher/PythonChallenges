@@ -67,13 +67,11 @@ def to_roman_number(value: int) -> str:
             elif digit <= 3:
                 roman_digit, digit = add_one(index, roman_digit, digit)
             elif digit <= 8:
-                if not roman[index][5] in roman_digit:
-                    roman_digit = roman[index][5]
-                    digit -= 5
+                roman_digit = roman[index][5]
+                digit -= 5
             else:
-                if not roman[index][10] in roman_digit:
-                    roman_digit = roman[index][10]
-                    digit -= 10
+                roman_digit = roman[index][10]
+                digit -= 10
         
         roman_number.append(roman_digit)
         index *= 10
